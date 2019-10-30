@@ -27,5 +27,16 @@
     <string name="buyerother">Other</string>
     <string name="buyernonbinary">Non-Binary</string>
 
+    <string name="sellername">Brand Name</string>
+    <string name="selleremail">Email</string>
+    <string name="sellerpassword">Password</string>
+    <string name="sellerconfirmpass">Confirm Password</string>
+    <string name="sellerregister">Register</string>
+    <string name="sellerphone">Phone</string>
+    <string name="sellerlogo">Upload Logo</string>
+    <string name="selleraddress">Shop Address</string>
+    <string name="sellersignin">Sign In</string>
+    <string name="sellersignup">Click here to Sign Up</string>
+
     //
 </resources>

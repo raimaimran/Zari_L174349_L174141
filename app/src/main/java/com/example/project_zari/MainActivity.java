@@ -22,10 +22,24 @@ public class MainActivity extends AppCompatActivity {
                 openBuyerSignIn();
             }
         });
+
+        Button button2 = (Button) findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openSellerSignIn();
+            }
+        });
     }
     public void openBuyerSignIn()
     {
         Intent intent = new Intent(this, signinBuyer.class);
+        startActivity(intent);
+    }
+
+    public void openSellerSignIn()
+    {
+        Intent intent = new Intent(this, signinSeller.class);
         startActivity(intent);
     }
 
