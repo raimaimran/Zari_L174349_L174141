@@ -29,9 +29,9 @@
         android:backgroundTint="@color/zariPurple"
         android:gravity="center"
         android:padding="16dp"
-        android:text="@string/buyeremail"
+        android:hint="@string/buyeremail"
         android:textColor="@color/zariPurple"
-        android:textColorLink="@color/zariPurple"
+        android:textColorHint="@color/zariPurple"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -47,9 +47,10 @@
         android:backgroundTint="@color/zariPurple"
         android:gravity="center"
         android:padding="16dp"
-        android:text="@string/buyerpassword"
+        android:hint="@string/buyerpassword"
+        android:inputType="textPassword"
         android:textColor="@color/zariPurple"
-        android:textColorLink="@color/zariPurple"
+        android:textColorHint="@color/zariPurple"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -87,5 +88,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bssignin"
         app:layout_constraintVertical_bias="0.0" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

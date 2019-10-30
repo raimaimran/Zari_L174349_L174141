@@ -14,4 +14,18 @@
     <string name="buyersignin">Sign In</string>
     <string name="buyersignup">Click Here to Sign Up</string>
     //
+
+    //BUYER SIGN UP STRINGS
+
+    <string name="buyername">Name</string>
+    <string name="buyerDOB">Select Date of Birth</string>
+    <string name="buyerconfirmpass">Confirm Password</string>
+    <string name="buyerregister">Register</string>
+    <string name="buyergender">Gender</string>
+    <string name="buyermale">Trash</string>
+    <string name="buyerfemale">Female</string>
+    <string name="buyerother">Other</string>
+    <string name="buyernonbinary">Non-Binary</string>
+
+    //
 </resources>
