@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Project_zari</string>
+
+
+    //START UP STRINGS
+    <string name="sign_in_buyer">Sign In as Buyer</string>
+    <string name="sign_in_seller">Sign In as Seller</string>
+    //
+
+    //BUYER SIGN IN TEXT
+    <string name="buyeremail">Email</string>
+    <string name="buyerpassword">Password</string>
+
+    <string name="buyersignin">Sign In</string>
+    <string name="buyersignup">Click Here to Sign Up</string>
+    //
 </resources>
