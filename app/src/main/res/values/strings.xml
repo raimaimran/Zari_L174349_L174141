@@ -37,6 +37,10 @@
     <string name="selleraddress">Shop Address</string>
     <string name="sellersignin">Sign In</string>
     <string name="sellersignup">Click here to Sign Up</string>
+    <string name="menu_activity">Activity</string>
+    <string name="menu_shop">Shop</string>
+    <string name="menu_message">Message</string>
+    <string name="menu_profile">Profile</string>
 
     //
 </resources>
