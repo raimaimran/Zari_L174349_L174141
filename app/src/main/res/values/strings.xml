@@ -38,5 +38,11 @@
     <string name="sellersignin">Sign In</string>
     <string name="sellersignup">Click here to Sign Up</string>
 
+
+    <string name="title_activity_buyer_homepage">buyer_homepage</string>
+    <string name="title_home">Home</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="title_account">Account</string>
+
     //
 </resources>
