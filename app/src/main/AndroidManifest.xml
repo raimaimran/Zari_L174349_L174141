@@ -22,8 +22,8 @@
         </activity>
         <activity android:name=".signup_seller"></activity>
         <activity
-            android:name=".signinSeller">
-            android:theme="@style/AppTheme2" />
+            android:name=".signinSeller"
+            android:theme="@style/AppTheme2">
         </activity>
     </application>
 
