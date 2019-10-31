@@ -2,6 +2,7 @@
 <resources>
     <color name="colorPrimary">#000000</color>
     <color name="colorPrimaryDark">#4D1032</color>
+    <color name="selectedtab">#AD8F8F</color>
     <color name="colorAccent">#D81B60</color>
     <color name="zariPurple">#4D1032</color>
     <color name= "fade_white">#EBE5EC</color>
