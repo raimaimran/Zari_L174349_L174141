@@ -42,5 +42,11 @@
     <string name="menu_message">Message</string>
     <string name="menu_profile">Profile</string>
 
+
+    <string name="title_activity_buyer_homepage">buyer_homepage</string>
+    <string name="title_home">Home</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="title_account">Account</string>
+
     //
 </resources>

@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".signup_buyer"></activity>
+        <activity
+            android:name=".buyer_homepage"
+            android:label="@string/title_activity_buyer_homepage">
+
+        </activity>
+        <activity android:name=".signup_buyer" />
         <activity
             android:name=".signinBuyer"
             android:theme="@style/AppTheme2" />
@@ -20,7 +25,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".signup_seller"></activity>
+        <activity android:name=".signup_seller"
+            android:theme="@style/AppTheme2"></activity>>
         <activity
             android:name=".signinSeller"
             android:theme="@style/AppTheme2">
@@ -37,6 +43,8 @@
             android:name=".sellerShopAdapter"
             android:theme="@style/AppTheme2">
         </activity>
+
+<!--&gt;>>>>>> 4b56cb8f97df6c706629b96a2ab93255bb71f21d-->
     </application>
 
 </manifest>
