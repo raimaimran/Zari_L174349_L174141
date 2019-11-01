@@ -25,6 +25,18 @@
             android:name=".signinSeller"
             android:theme="@style/AppTheme2">
         </activity>
+        <activity
+            android:name=".Seller_Home"
+            android:theme="@style/AppTheme2">
+        </activity>
+        <activity
+            android:name=".SShopFragment"
+            android:theme="@style/AppTheme2">
+        </activity>
+        <activity
+            android:name=".sellerShopAdapter"
+            android:theme="@style/AppTheme2">
+        </activity>
     </application>
 
 </manifest>

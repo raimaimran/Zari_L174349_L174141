@@ -2,6 +2,7 @@ package com.example.project_zari;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -30,17 +31,15 @@ public class signinSeller extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //openSellerActivity();
-                Intent intent = new Intent(signinSeller.this, Seller_Home.class);
-                startActivity(intent);
+                openSellerActivity();
             }
         });
     }
 
-//    public void openSellerActivity() {
-//        Intent intent = new Intent(signinSeller.this, Seller_Home.class);
-//        startActivity(intent);
-//    }
+    public void openSellerActivity() {
+        Intent intent = new Intent(signinSeller.this, Seller_Home.class);
+        startActivity(intent);
+    }
 
 }
 
