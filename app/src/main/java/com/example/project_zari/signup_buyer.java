@@ -3,6 +3,7 @@ package com.example.project_zari;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -55,6 +56,16 @@ public class signup_buyer extends AppCompatActivity {
                 btn.setText(date);
             }
         };
+
+        btn = (Button) findViewById(R.id.buyersu);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(signup_buyer.this, buyer_homepage.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
     }
 }
