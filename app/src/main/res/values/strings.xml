@@ -66,6 +66,19 @@
     <string name="justforyou">----------JUST FOR YOU----------</string>
     <string name="prod_name">Product Title</string>
     <string name="prod_price">RS. </string>
+    <string name="addtofav">Add to Favorites </string>
+    <string name="prod_desc">Product Description </string>
+    <string name="prod_desctext">Random Text which describes product </string>
+    <string name="prod_rating">Product Rating </string>
+    <string name="addtocart">Add to Cart</string>
+    //
+
+    //Buyer Account
+    <string name="buyer_name">User Name</string>
+    <string name="buyer_email">Buyer Email</string>
+    <string name="buyer_phone">Buyer Phone Number</string>
+    <string name="buyer_add">Buyer Address</string>
+    <string name="sign_out">Sign Out</string>
     //
 
 </resources>
