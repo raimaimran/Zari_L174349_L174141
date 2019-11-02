@@ -13,4 +13,8 @@
         <item name="colorPrimaryDark">@color/fade_white</item>
     </style>
 
+    <style name="AppThemeRatingBar" parent="Theme.AppCompat">
+        <item name="colorAccent">@color/zariPurple</item>
+        <item name="android:colorControlNormal">@color/darkgray</item>
+    </style>
 </resources>
