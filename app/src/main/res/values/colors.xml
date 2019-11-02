@@ -8,4 +8,7 @@
     <color name= "fade_white">#EBE5EC</color>
     <color name="white">#FFFFFF</color>
     <color name="transparent">#00FFFFFF</color>
+    <color name="grayColor">#DBD9D9</color>
+    <color name="black">#111111</color>
+    <color name="darkgray">#978787</color>
 </resources>

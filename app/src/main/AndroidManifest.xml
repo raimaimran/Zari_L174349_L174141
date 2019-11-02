@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
+            android:theme="@style/AppTheme2"
             android:name=".buyer_homepage"
             android:label="@string/title_activity_buyer_homepage">
 
@@ -27,6 +29,7 @@
         </activity>
         <activity android:name=".signup_seller"
             android:theme="@style/AppTheme2"></activity>
+<!--&gt;>>>>>> b49cfa3feaba4a1d160f8e902941584db30029f0-->
         <activity
             android:name=".signinSeller"
             android:theme="@style/AppTheme2">
