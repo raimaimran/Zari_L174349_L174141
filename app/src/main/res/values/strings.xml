@@ -29,6 +29,7 @@
 
     //
 
+
     <string name="sellername">Brand Name</string>
     <string name="selleremail">Email</string>
     <string name="sellerpassword">Password</string>
@@ -39,6 +40,8 @@
     <string name="selleraddress">Shop Address</string>
     <string name="sellersignin">Sign In</string>
     <string name="sellersignup">Click here to Sign Up</string>
+
+
     <string name="menu_activity">Activity</string>
     <string name="menu_shop">Shop</string>
     <string name="menu_message">Message</string>
@@ -53,9 +56,16 @@
     <string name="title_account">Account</string>
     //
 
-    //BUYER HOME FRAGMENT
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    //
 
+    //Buyer home
+    <string name="search_here">Search Here</string>
+    <string name="justforyou">----------JUST FOR YOU----------</string>
+    <string name="prod_name">Product Title</string>
+    <string name="prod_price">RS. </string>
     //
 
 </resources>
