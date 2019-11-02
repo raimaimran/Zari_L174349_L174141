@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".signup_seller"
-            android:theme="@style/AppTheme2"></activity>>
+            android:theme="@style/AppTheme2"></activity>
         <activity
             android:name=".signinSeller"
             android:theme="@style/AppTheme2">

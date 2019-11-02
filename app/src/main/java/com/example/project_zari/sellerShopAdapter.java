@@ -41,6 +41,8 @@ public class sellerShopAdapter extends RecyclerView.Adapter<sellerShopAdapter.Sh
         holder.prodimg.setImageDrawable(i);
         float r = items.get(position).rating;
         holder.rating.setRating(r);
+        t = items.get(position).desc;
+        holder.proddesc.setText(t);
     }
 
     @Override
