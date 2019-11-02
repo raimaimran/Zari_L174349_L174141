@@ -27,6 +27,8 @@
     <string name="buyerother">Other</string>
     <string name="buyernonbinary">Non-Binary</string>
 
+    //
+
     <string name="sellername">Brand Name</string>
     <string name="selleremail">Email</string>
     <string name="sellerpassword">Password</string>
@@ -43,10 +45,17 @@
     <string name="menu_profile">Profile</string>
 
 
+    //Navigation bar buyer
+
     <string name="title_activity_buyer_homepage">buyer_homepage</string>
     <string name="title_home">Home</string>
     <string name="title_favorites">Favorites</string>
     <string name="title_account">Account</string>
+    //
+
+    //BUYER HOME FRAGMENT
+
 
     //
+
 </resources>
