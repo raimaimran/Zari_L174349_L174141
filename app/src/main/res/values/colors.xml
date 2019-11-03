@@ -12,4 +12,7 @@
     <color name="black">#111111</color>
     <color name="darkgray">#978787</color>
     <color name="lightgray">#F8F7F7</color>
+    <color name="red">#F10B0B</color>
+
+
 </resources>

@@ -17,27 +17,29 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/fade_white"
+            android:background="@color/zariPurple"
             >
 
             <SearchView
                 android:id="@+id/searchbar"
-                android:layout_width="322dp"
+                android:layout_width="305dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="4dp"
+                android:layout_marginLeft="5dp"
 
+                android:background="@color/fade_white"
                 android:iconifiedByDefault="false"
                 android:queryHint="@string/search_here"
                 app:layout_constraintEnd_toEndOf="@id/cart"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/cart"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
+                android:layout_marginRight="5dp"
                 android:background="@color/fade_white"
                 android:src="@drawable/ic_shopping_cart_black_24dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +50,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/grayColor"
+                android:background="@color/zariPurple"
                 app:layout_constraintTop_toBottomOf="@+id/searchbar"
                 android:layout_marginTop="10dp"
                  />
@@ -69,10 +71,11 @@
             android:id="@+id/justforyou"
 
             android:text="@string/justforyou"
+            android:padding="10dp"
             android:textSize="25sp"
-            android:textColor="@color/zariPurple"
+            android:textColor="@color/fade_white"
             android:gravity="center"
-            android:background="@color/fade_white"
+            android:background="@color/zariPurple"
             android:textStyle="bold"
             />
     </androidx.cardview.widget.CardView>

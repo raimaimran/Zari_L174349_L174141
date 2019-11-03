@@ -63,7 +63,7 @@
 
     //Buyer home
     <string name="search_here">Search Here</string>
-    <string name="justforyou">----------JUST FOR YOU----------</string>
+    <string name="justforyou">\'\'\'Just For You\'\'\'</string>
     <string name="prod_name">Product Title</string>
     <string name="prod_price">RS. </string>
     <string name="addtofav">Add to Favorites </string>
@@ -79,6 +79,13 @@
     <string name="buyer_phone">Buyer Phone Number</string>
     <string name="buyer_add">Buyer Address</string>
     <string name="sign_out">Sign Out</string>
+    //
+
+    //Order Placed
+    <string name="orderplaced">Congratulations!\nYour Order has been successful placed.</string>
+    <string name="contact">We will contact you in a few days for confirmation.</string>
+    <string name="continue_shopping">Continue Shopping</string>
+
     //
 
 </resources>

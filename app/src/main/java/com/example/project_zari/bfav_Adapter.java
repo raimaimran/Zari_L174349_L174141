@@ -3,12 +3,9 @@ package com.example.project_zari;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
@@ -19,33 +16,26 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class bhome_Adapter extends RecyclerView.Adapter<bhome_Adapter.bHomeViewHolder> {
+public class bfav_Adapter extends RecyclerView.Adapter<bfav_Adapter.bFavViewHolder> {
 
     private List<DemoItem2> items;
     private Context context;
 
-    public bhome_Adapter(List<DemoItem2> item, Context context) {
+    public bfav_Adapter(List<DemoItem2> item, Context context) {
         this.items = item;
         this.context = context;
     }
 
     @NonNull
     @Override
-    public bHomeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public bFavViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.fragment_home,parent,false);
-
-        return new bHomeViewHolder(view);
+        View view = inflater.inflate(R.layout.fragment_favorite,parent,false);
+        return new bFavViewHolder(view);
     }
 
-
-/*
-
-*/
-
-
     @Override
-    public void onBindViewHolder(@NonNull bHomeViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull bFavViewHolder holder, final int position) {
 
         holder.prod_image.setImageResource(items.get(position).icon);
         holder.prod_name.setText(items.get(position).title);
@@ -73,7 +63,7 @@ public class bhome_Adapter extends RecyclerView.Adapter<bhome_Adapter.bHomeViewH
     }
 
 
-    public class bHomeViewHolder extends RecyclerView.ViewHolder{
+    public class bFavViewHolder extends RecyclerView.ViewHolder{
 
         ImageView prod_image;
         TextView prod_name;
@@ -81,14 +71,14 @@ public class bhome_Adapter extends RecyclerView.Adapter<bhome_Adapter.bHomeViewH
         TextView prod_price;
         LinearLayout linearLayout;
 
-        public bHomeViewHolder(@NonNull View itemView) {
+        public bFavViewHolder(@NonNull View itemView) {
             super(itemView);
 
             prod_image = itemView.findViewById(R.id.prodicon);
             prod_name = itemView.findViewById(R.id.prodname);
             prod_rating = itemView.findViewById(R.id.ratingBar);
             prod_price = itemView.findViewById(R.id.price);
-            linearLayout = (LinearLayout) itemView.findViewById(R.id.homefrag);
+            linearLayout = (LinearLayout) itemView.findViewById(R.id.favfrag);
         }
     }
 }

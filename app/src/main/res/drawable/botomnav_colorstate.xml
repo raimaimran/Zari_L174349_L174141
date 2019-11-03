@@ -3,5 +3,4 @@
 
     <item android:color = "@color/zariPurple" android:state_selected="true"/>
     <item android:color = "@color/selectedtab" android:state_selected="false"/>
-
 </selector>
