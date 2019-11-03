@@ -1,6 +1,7 @@
 package com.example.project_zari;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -12,6 +13,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +26,14 @@ public class SShopFragment extends Fragment {
 
         RecyclerView shopitemslist = view.findViewById(R.id.shop_recyclerview);
         shopitemslist.setLayoutManager(new GridLayoutManager(getContext(),2));
+
+        FloatingActionButton btn = view.findViewById(R.id.addProductButton);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openFloatingClicked();
+            }
+        });
 
         List<DemoItem> shopitems=new ArrayList<>();
         int id;
@@ -60,5 +72,11 @@ public class SShopFragment extends Fragment {
 
         shopitemslist.setAdapter(new sellerShopAdapter(shopitems,getContext()));
         return view;
+    }
+
+    public void openFloatingClicked()
+    {
+        Intent intent = new Intent(getContext(), SellerAddProduct.class);
+        startActivity(intent);
     }
 }
