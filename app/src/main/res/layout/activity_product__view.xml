@@ -9,9 +9,10 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:background="@color/lightgray">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,6 +33,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 >
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -46,7 +48,7 @@
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
                         android:text="amount"
-                        android:textColor="@color/black"
+                        android:textColor="@color/darkgray"
                         android:textSize="26sp"
 
                         app:layout_constraintEnd_toEndOf="parent"
@@ -56,15 +58,16 @@
 
                     <TextView
                         android:id="@+id/pricetext"
-                        android:paddingTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
                         android:text="@string/prod_price"
-                        android:textColor="@color/black"
+                        android:textColor="@color/darkgray"
                         android:textSize="26sp"
+                        android:layout_marginLeft="5dp"
 
                         app:layout_constraintEnd_toStartOf="@id/price"
-                        app:layout_constraintHorizontal_bias="0.096"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -75,10 +78,11 @@
                         android:layout_marginTop="8dp"
                         android:paddingTop="10dp"
                         android:text="@string/prod_name"
-                        android:textColor="@color/black"
+                        android:textColor="@color/darkgray"
                         android:textSize="26sp"
+                        android:layout_marginLeft="5dp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.027"
+                        app:layout_constraintHorizontal_bias="0.0"
 
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/pricetext" />
@@ -141,9 +145,9 @@
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
                         android:text="@string/prod_desc"
-                        android:textColor="@color/black"
-                        android:textSize="25sp"
-                        >
+                        android:textColor="@color/darkgray"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="25sp">
 
                     </TextView>
 
@@ -153,19 +157,27 @@
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
                         android:text="@string/prod_desctext"
-                        android:textColor="@color/black"
+                        android:textColor="@color/darkgray"
                         android:textSize="15sp"
+                        android:layout_marginLeft="5dp"
                         >
 
                     </TextView>
 
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/grayColor"
+
+                        />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="5dp">
+                android:paddingTop="5dp"
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -179,8 +191,9 @@
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
                         android:text="@string/prod_rating"
-                        android:textColor="@color/black"
+                        android:textColor="@color/darkgray"
                         android:textSize="25sp"
+                        android:layout_marginLeft="5dp"
                         >
 
                     </TextView>
@@ -191,32 +204,32 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:isIndicator="true"
+                        android:layout_marginLeft="5dp"
                         android:theme="@style/AppThemeRatingBar">
 
-
                     </RatingBar>
+
 
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <Button
-                android:layout_width="240dp"
-                android:layout_height="61dp"
-                android:layout_marginTop="15dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:background="@drawable/roundbtnpurple"
-                android:text="@string/addtocart"
-                android:textColor="@color/fade_white"
-                android:textSize="20dp"
-                android:padding="5dp">
-
-            </Button>
-
 
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
+    <Button
+        android:layout_width="240dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@drawable/roundbtnpurple"
+        android:text="@string/addtocart"
+        android:textColor="@color/fade_white"
+        android:textSize="20dp"
+        android:padding="5dp">
+
+    </Button>
 
 </LinearLayout>

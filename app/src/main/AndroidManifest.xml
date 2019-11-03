@@ -9,13 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Product_View"
-            android:theme="@style/AppTheme2">
-        </activity>
+        <activity android:name=".order_placed"></activity>
+        <activity android:name=".buyer_cart" />
+        <activity
+            android:name=".Product_View"
+            android:theme="@style/AppTheme2" />
         <activity
             android:name=".buyer_homepage"
             android:label="@string/title_activity_buyer_homepage"
-            android:theme="@style/AppTheme2"></activity>
+            android:theme="@style/AppTheme" />
         <activity android:name=".signup_buyer" />
         <activity
             android:name=".signinBuyer"
@@ -27,22 +29,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".signup_seller"
-            android:theme="@style/AppTheme2"></activity>
-
+        <activity
+            android:name=".signup_seller"
+            android:theme="@style/AppTheme2" />
         <activity
             android:name=".signinSeller"
-            android:theme="@style/AppTheme2"></activity>
+            android:theme="@style/AppTheme2" />
         <activity
             android:name=".Seller_Home"
-            android:theme="@style/AppTheme2"></activity>
+            android:theme="@style/AppTheme2" />
         <activity
             android:name=".SShopFragment"
-            android:theme="@style/AppTheme2"></activity>
+            android:theme="@style/AppTheme2" />
         <activity
             android:name=".sellerShopAdapter"
-            android:theme="@style/AppTheme2"></activity>
+            android:theme="@style/AppTheme2" />
     </application>
 
 </manifest>

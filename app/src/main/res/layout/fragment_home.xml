@@ -15,25 +15,26 @@
 
 
     <androidx.cardview.widget.CardView
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="15dp"
-        android:background="@color/fade_white"
+        android:layout_marginBottom="5dp"
 
         >
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/fade_white">
+            >
 
             <ImageView
                 android:id="@+id/prodicon"
                 android:layout_width="145dp"
                 android:layout_height="145dp"
-                android:layout_marginStart="10dp"
+                android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:scaleType="centerCrop" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/prodname"
@@ -42,8 +43,8 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:text="@string/prod_name"
-                android:textSize="24sp"
-                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textColor="@color/darkgray"
                />
 
             <RatingBar
@@ -65,11 +66,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="amount"
-                    android:textColor="@color/black"
-                    android:textSize="24sp"
+                    android:textColor="@color/darkgray"
+                    android:textSize="20sp"
 
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.503"
+                    app:layout_constraintHorizontal_bias="0.343"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -78,11 +79,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/prod_price"
-                    android:textColor="@color/black"
-                    android:textSize="24sp"
+                    android:textColor="@color/darkgray"
+                    android:textSize="20sp"
 
                     app:layout_constraintEnd_toStartOf="@id/price"
-                    app:layout_constraintHorizontal_bias="0.096"
+                    app:layout_constraintHorizontal_bias="0.432"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>

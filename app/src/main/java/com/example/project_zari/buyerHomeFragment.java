@@ -1,6 +1,7 @@
 package com.example.project_zari;
 
 
+import android.content.Intent;
 import android.graphics.drawable.AdaptiveIconDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.ImageButton;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -30,6 +32,8 @@ public class buyerHomeFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
+
     }
 
     public static buyerHomeFragment newInstance() {
@@ -44,8 +48,19 @@ public class buyerHomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
+
         View view = inflater.inflate(R.layout.fragment_blank_bhome, container, false);
         RecyclerView rv = view.findViewById(R.id.buyerhomerecycleview);
+
+
+        ImageButton btn = (ImageButton) view.findViewById(R.id.cart);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), buyer_cart.class);
+                startActivity(intent);
+            }
+        });
 
         items = new ArrayList<>();
 
