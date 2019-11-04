@@ -37,7 +37,7 @@ public class SActivityFragment extends Fragment {
 
         id = getResources().getIdentifier("shopitem3","drawable","com.example.project_zari");
         d=getResources().getDrawable(id);
-        bestimg2.setImageDrawable(d);
+        bestimg3.setImageDrawable(d);
 
 
         TextView besttext1 = view.findViewById(R.id.bestselltext1);
@@ -58,15 +58,15 @@ public class SActivityFragment extends Fragment {
 
         id = getResources().getIdentifier("shopitem1","drawable","com.example.project_zari");
         d=getResources().getDrawable(id);
-        bestimg1.setImageDrawable(d);
+        topimg1.setImageDrawable(d);
 
         id = getResources().getIdentifier("shopitem4","drawable","com.example.project_zari");
         d=getResources().getDrawable(id);
-        bestimg2.setImageDrawable(d);
+        topimg2.setImageDrawable(d);
 
         id = getResources().getIdentifier("shopitem5","drawable","com.example.project_zari");
         d=getResources().getDrawable(id);
-        bestimg2.setImageDrawable(d);
+        topimg3.setImageDrawable(d);
 
 
         RatingBar toprating1 = view.findViewById(R.id.toprating1);
@@ -95,7 +95,7 @@ public class SActivityFragment extends Fragment {
 
         id = getResources().getIdentifier("shopitem4","drawable","com.example.project_zari");
         d=getResources().getDrawable(id);
-        mostimg2.setImageDrawable(d);
+        mostimg3.setImageDrawable(d);
 
 
         TextView mosttext1 = view.findViewById(R.id.mosttext1);
@@ -103,11 +103,11 @@ public class SActivityFragment extends Fragment {
         TextView mosttext3 = view.findViewById(R.id.mosttext3);
 
         s="1,241"+" views";
-        besttext1.setText(s);
+        mosttext1.setText(s);
         s="2,936"+" views";
-        besttext2.setText(s);
+        mosttext2.setText(s);
         s="1,644"+" views";
-        besttext3.setText(s);
+        mosttext3.setText(s);
 
         return view;
     }

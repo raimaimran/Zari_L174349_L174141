@@ -84,7 +84,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0"
-                        app:srcCompat="@drawable/shopitem6" />
+                        app:srcCompat="@drawable/product_placeholder" />
 
                     <ImageView
                         android:id="@+id/bestsellimg2"
@@ -100,7 +100,7 @@
                         app:layout_constraintStart_toEndOf="@+id/bestsellimg1"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0"
-                        app:srcCompat="@drawable/shopitem2" />
+                        app:srcCompat="@drawable/product_placeholder" />
 
                     <ImageView
                         android:id="@+id/bestsellimg3"
@@ -117,7 +117,7 @@
                         app:layout_constraintStart_toEndOf="@+id/bestsellimg2"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0"
-                        app:srcCompat="@drawable/shopitem3" />
+                        app:srcCompat="@drawable/product_placeholder" />
 
                     <TextView
                         android:id="@+id/bestselltext1"
@@ -125,7 +125,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
                         android:layout_marginTop="10dp"
-                        android:text="255 sold"
+                        android:text="000 sold"
                         android:textSize="16sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -140,7 +140,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="70dp"
                         android:layout_marginTop="10dp"
-                        android:text="324 sold"
+                        android:text="000 sold"
                         android:textSize="16sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -153,16 +153,16 @@
                         android:id="@+id/bestselltext3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="60dp"
+                        android:layout_marginStart="50dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="50dp"
-                        android:text="127 sold"
+                        android:text="000 sold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintHorizontal_bias="0.333"
                         app:layout_constraintStart_toEndOf="@+id/bestselltext2"
                         app:layout_constraintTop_toBottomOf="@+id/bestsellimg3"
-                        app:layout_constraintVertical_bias="0.036" />
+                        app:layout_constraintVertical_bias="0.047" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
@@ -214,7 +214,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0"
-                        app:srcCompat="@drawable/shopitem1" />
+                        app:srcCompat="@drawable/product_placeholder" />
 
                     <ImageView
                         android:id="@+id/topimg2"
@@ -230,7 +230,7 @@
                         app:layout_constraintStart_toEndOf="@+id/topimg1"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0"
-                        app:srcCompat="@drawable/shopitem4" />
+                        app:srcCompat="@drawable/product_placeholder" />
 
                     <ImageView
                         android:id="@+id/topimg3"
@@ -247,7 +247,7 @@
                         app:layout_constraintStart_toEndOf="@+id/topimg2"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0"
-                        app:srcCompat="@drawable/shopitem5" />
+                        app:srcCompat="@drawable/product_placeholder" />
 
                     <RatingBar
                         android:id="@+id/toprating1"
@@ -257,7 +257,6 @@
                         android:layout_marginStart="30dp"
                         android:layout_marginTop="10dp"
                         android:progressTint="@color/zariPurple"
-                        android:rating="5"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -273,7 +272,6 @@
                         android:layout_marginStart="45dp"
                         android:layout_marginTop="10dp"
                         android:progressTint="@color/zariPurple"
-                        android:rating="4"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -290,7 +288,6 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="35dp"
                         android:progressTint="@color/zariPurple"
-                        android:rating="5"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.098"
@@ -347,7 +344,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0"
-                        app:srcCompat="@drawable/shopitem2" />
+                        app:srcCompat="@drawable/product_placeholder" />
 
                     <ImageView
                         android:id="@+id/mostimg2"
@@ -363,7 +360,7 @@
                         app:layout_constraintStart_toEndOf="@+id/mostimg1"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0"
-                        app:srcCompat="@drawable/shopitem6" />
+                        app:srcCompat="@drawable/product_placeholder" />
 
                     <ImageView
                         android:id="@+id/mostimg3"
@@ -380,7 +377,7 @@
                         app:layout_constraintStart_toEndOf="@+id/mostimg2"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0"
-                        app:srcCompat="@drawable/shopitem4" />
+                        app:srcCompat="@drawable/product_placeholder" />
 
                     <TextView
                         android:id="@+id/mosttext1"
@@ -388,7 +385,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
                         android:layout_marginTop="10dp"
-                        android:text="1,241 views"
+                        android:text="0,000 views"
                         android:textSize="16sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -403,7 +400,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="40dp"
                         android:layout_marginTop="10dp"
-                        android:text="2,936 views"
+                        android:text="0,000 views"
                         android:textSize="16sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -419,7 +416,7 @@
                         android:layout_marginStart="45dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="40dp"
-                        android:text="1,644 views"
+                        android:text="0,000 views"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"

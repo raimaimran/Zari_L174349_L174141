@@ -36,6 +36,10 @@ public class signup_seller extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "You must enter a password", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                else if (pass.getText().toString().length()<8){
+                    Toast.makeText(getApplicationContext(), "You password must be greater than 8 characters", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 EditText cpass = findViewById(R.id.ssuconfirmpass);
                 if (cpass.getText().toString().isEmpty()){
                     Toast.makeText(getApplicationContext(), "You must enter re-enter your password", Toast.LENGTH_SHORT).show();
