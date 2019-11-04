@@ -22,7 +22,7 @@
             android:id="@+id/justforyou"
             android:background="@color/zariPurple"
 
-            android:text="Your Account"
+            android:text="@string/your_account"
             android:padding="10dp"
             android:textStyle="bold"
             android:textSize="25sp"
@@ -55,7 +55,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/usericon"></TextView>
+        app:layout_constraintTop_toBottomOf="@id/usericon">
+    </TextView>
 
     <TextView
         android:id="@+id/useremail"
@@ -70,7 +71,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/username"></TextView>
+        app:layout_constraintTop_toBottomOf="@id/username">
+    </TextView>
 
     <TextView
         android:id="@+id/userphone"
@@ -85,7 +87,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/useremail"></TextView>
+        app:layout_constraintTop_toBottomOf="@id/useremail">
+    </TextView>
 
     <TextView
         android:id="@+id/useradd"
@@ -100,7 +103,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userphone"></TextView>
+        app:layout_constraintTop_toBottomOf="@id/userphone">
+    </TextView>
 
     <Button
         android:layout_width="145dp"
@@ -113,6 +117,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.895"
-        app:layout_constraintStart_toStartOf="parent"></Button>
+        app:layout_constraintStart_toStartOf="parent">
+    </Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

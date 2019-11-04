@@ -67,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:text="Name"
+        android:text="@string/name"
         android:textColor="@color/zariPurple"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="20dp"
-        android:text="Description"
+        android:text="@string/description"
         android:textColor="@color/zariPurple"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -95,7 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="20dp"
-        android:text="Phone"
+        android:text="@string/phone"
         android:textColor="@color/zariPurple"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -111,7 +111,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="20dp"
-        android:text="Address"
+        android:text="@string/address"
         android:textColor="@color/zariPurple"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -155,7 +155,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/addeditText"
+        android:id="@+id/phoneeditText"
         android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_marginStart="7dp"
@@ -163,7 +163,7 @@
         android:layout_marginEnd="15dp"
         android:backgroundTint="#4D1032"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="phone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/phone_textview"
@@ -171,7 +171,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/addedittext"
         android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_marginStart="7dp"
@@ -184,7 +184,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/address_textview"
-        app:layout_constraintTop_toBottomOf="@+id/addeditText"
+        app:layout_constraintTop_toBottomOf="@+id/phoneeditText"
         app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/roundbtnpurple"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addedittext"
+        app:layout_constraintVertical_bias="0.172" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

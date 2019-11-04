@@ -83,6 +83,7 @@
         android:textColorLink="@color/white"
 
         android:textSize="22sp"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ssuemail" />

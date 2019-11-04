@@ -11,6 +11,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -57,10 +59,30 @@ public class signup_buyer extends AppCompatActivity {
             }
         };
 
-        btn = (Button) findViewById(R.id.buyersu);
-        btn.setOnClickListener(new View.OnClickListener() {
+        Button btn1 = (Button) findViewById(R.id.buyersu);
+        btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                EditText name = findViewById(R.id.bsuname);
+                if (name.getText().toString().isEmpty()){
+                    Toast.makeText(getApplicationContext(), "You must enter your name", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                EditText email = findViewById(R.id.bsuemail);
+                if (email.getText().toString().isEmpty()){
+                    Toast.makeText(getApplicationContext(), "You must enter your email", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                EditText pass = findViewById(R.id.bsupass);
+                if (pass.getText().toString().isEmpty()){
+                    Toast.makeText(getApplicationContext(), "You must enter a password", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                EditText cpass = findViewById(R.id.bsuconfirmpass);
+                if (cpass.getText().toString().isEmpty()){
+                    Toast.makeText(getApplicationContext(), "You must enter re-enter your password", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 Intent intent = new Intent(signup_buyer.this, buyer_homepage.class);
                 startActivity(intent);
                 finish();

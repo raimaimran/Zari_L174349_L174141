@@ -44,6 +44,12 @@
         <activity
             android:name=".sellerShopAdapter"
             android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".SellerAddProduct"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".SProfileFragment"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

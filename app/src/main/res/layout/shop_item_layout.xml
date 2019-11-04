@@ -35,22 +35,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/product_placeholder" />
 
-            <TextView
-                android:id="@+id/prod_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="45dp"
-                android:layout_marginBottom="86dp"
-                android:text="Product Name"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/prod_icon"
-                app:layout_constraintVertical_bias="0.0" />
-
             <RatingBar
                 android:id="@+id/ratingBar"
                 style="@style/Widget.AppCompat.RatingBar.Small"
@@ -68,11 +52,27 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
+                android:id="@+id/prod_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="45dp"
+                android:layout_marginBottom="86dp"
+                android:text="@string/product_name"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prod_icon"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
                 android:id="@+id/prod_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Description:  blah blah blah blah blah blah blah blah blah blah"
+                android:text="@string/description_blah"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"

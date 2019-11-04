@@ -35,7 +35,7 @@
         app:layout_constraintHorizontal_bias="0.318"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.192"
+        app:layout_constraintVertical_bias="0.178"
         app:srcCompat="@drawable/upload_icon" />
 
     <TextView
@@ -54,7 +54,7 @@
         app:layout_constraintVertical_bias="0.082" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/nametext"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="10dp"
@@ -98,7 +98,7 @@
             app:layout_constraintVertical_bias="0.081" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/pricetext"
             android:layout_width="0dp"
             android:layout_height="42dp"
             android:layout_marginStart="10dp"
@@ -111,22 +111,23 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/textView5"
-            app:layout_constraintTop_toBottomOf="@+id/editText5"
+            app:layout_constraintTop_toBottomOf="@+id/desctext"
             app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="252dp"
         android:background="@color/zariPurple"
         android:padding="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.966"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
-        app:layout_constraintVertical_bias="0.289"
+        app:layout_constraintTop_toBottomOf="@+id/pricetext"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/chart_placeholder" />
 
     <Button
@@ -134,6 +135,7 @@
         android:layout_width="160dp"
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="88dp"
         android:background="@drawable/roundbtnpurple"
         android:text="Upload Size Chart"
@@ -143,10 +145,10 @@
         app:layout_constraintHorizontal_bias="0.008"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.941" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/desctext"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -158,56 +160,63 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView4"
-            app:layout_constraintTop_toBottomOf="@+id/editText"
+            app:layout_constraintTop_toBottomOf="@+id/nametext"
             app:layout_constraintVertical_bias="0.0" />
 
     <RadioGroup
         android:id="@+id/radioGroup2"
         android:layout_width="134dp"
         android:layout_height="161dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="56dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.789"
+        app:layout_constraintHorizontal_bias="0.796"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
-        app:layout_constraintVertical_bias="0.211">
+        app:layout_constraintTop_toBottomOf="@+id/pricetext"
+        app:layout_constraintVertical_bias="0.0">
 
         <RadioButton
             android:id="@+id/radioButton3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Casual Dress" />
+            android:text="Casual Dress"
+            android:theme="@style/RadioButton" />
 
         <RadioButton
             android:id="@+id/radioButton4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fancy Dress" />
+            android:text="Fancy Dress"
+            android:theme="@style/RadioButton" />
 
         <RadioButton
             android:id="@+id/radioButton5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Bridal Dress" />
+            android:text="Bridal Dress"
+            android:theme="@style/RadioButton" />
 
         <RadioButton
             android:id="@+id/radioButton6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Jewelry" />
+            android:text="Jewelry"
+            android:theme="@style/RadioButton" />
 
         <RadioButton
             android:id="@+id/radioButton7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Shoes" />
+            android:text="Shoes"
+            android:theme="@style/RadioButton" />
     </RadioGroup>
 
     <Button
         android:id="@+id/button5"
         android:layout_width="160dp"
         android:layout_height="40dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="88dp"
         android:background="@drawable/roundbtnpurple"
         android:text="Choose category"
@@ -217,12 +226,13 @@
         app:layout_constraintHorizontal_bias="0.63"
         app:layout_constraintStart_toEndOf="@+id/button4"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/addbtn"
         android:layout_width="160dp"
         android:layout_height="40dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/roundbtnpurple"
         android:text="Add Product"
         android:textColor="@color/white"
@@ -231,7 +241,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
-        app:layout_constraintVertical_bias="0.906" />
+        app:layout_constraintTop_toBottomOf="@+id/pricetext"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

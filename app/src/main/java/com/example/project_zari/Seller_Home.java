@@ -35,9 +35,6 @@ public class Seller_Home extends AppCompatActivity {
                 case R.id.nav_shop:
                     selectedFragment = new SShopFragment();
                     break;
-                case R.id.nav_message:
-                    selectedFragment = new SMessageFragment();
-                    break;
                 case R.id.nav_profile:
                     selectedFragment = new SProfileFragment();
                     break;

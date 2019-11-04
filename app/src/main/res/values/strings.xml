@@ -22,7 +22,7 @@
     <string name="buyerconfirmpass">Confirm Password</string>
     <string name="buyerregister">Register</string>
     <string name="buyergender">Gender</string>
-    <string name="buyermale">Trash</string>
+    <string name="buyermale">Male</string>
     <string name="buyerfemale">Female</string>
     <string name="buyerother">Other</string>
     <string name="buyernonbinary">Non-Binary</string>
@@ -85,6 +85,17 @@
     <string name="orderplaced">Congratulations!\nYour Order has been successful placed.</string>
     <string name="contact">We will contact you in a few days for confirmation.</string>
     <string name="continue_shopping">Continue Shopping</string>
+    <string name="product_name">Product Name</string>
+    <string name="description_blah">Description: blah blah blah blah blah blah blah blah blah blah</string>
+    <string name="amount">amount</string>
+    <string name="name">Name</string>
+    <string name="description">Description</string>
+    <string name="phone">Phone</string>
+    <string name="address">Address</string>
+    <string name="recent_activity">Recent Activity</string>
+    <string name="best_sellers">Best Sellers</string>
+    <string name="your_favorites">Your Favorites</string>
+    <string name="your_account">Your Account</string>
 
     //
 

@@ -34,7 +34,6 @@ public class sellerShopAdapter extends RecyclerView.Adapter<sellerShopAdapter.Sh
 
     @Override
     public void onBindViewHolder(@NonNull sellerShopAdapter.ShopViewHolder holder, int position) {
-        //sellerShopAdapter.ShopViewHolder myholder = holder;
         String t = items.get(position).title;
         holder.prodtitle.setText(t);
         Drawable i = items.get(position).icon;
