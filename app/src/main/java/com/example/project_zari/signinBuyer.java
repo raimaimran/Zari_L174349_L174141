@@ -38,6 +38,11 @@ public class signinBuyer extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "You must enter your email", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                else if (uname.getText().toString().contains("@") != true)
+                {
+                    Toast.makeText(getApplicationContext(), "You must enter a valid email", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 EditText pass = findViewById(R.id.bspassword);
                 if (pass.getText().toString().isEmpty()){
                     Toast.makeText(getApplicationContext(), "You must enter your password", Toast.LENGTH_SHORT).show();

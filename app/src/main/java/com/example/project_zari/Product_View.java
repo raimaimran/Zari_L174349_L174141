@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+
 public class Product_View extends AppCompatActivity {
 
     private TextView prod_name, prod_desc, prod_price;
@@ -51,6 +53,16 @@ public class Product_View extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //getting and setting value from elegant number button
+        final ElegantNumberButton numpicker = (ElegantNumberButton) findViewById(R.id.numpicker);
+        numpicker.setOnClickListener(new ElegantNumberButton.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String num = numpicker.getNumber();
+            }
+        });
+
 
 
     }
