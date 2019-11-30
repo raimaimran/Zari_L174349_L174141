@@ -138,7 +138,7 @@
         android:layout_width="92dp"
         android:layout_height="53dp"
 
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
 
 
         android:text="@string/buyergender"
@@ -146,79 +146,74 @@
         android:textSize="22sp"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.213"
+        app:layout_constraintHorizontal_bias="0.279"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buyerdob" />
 
-    <RadioButton
-        android:id="@+id/buyerf"
+    <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:layout_marginTop="20dp"
-
-        android:text="@string/buyerfemale"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-
-        android:buttonTint="@color/white"
-
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
-        app:layout_constraintStart_toEndOf="@+id/buyergender"
-        app:layout_constraintTop_toBottomOf="@+id/buyerdob" />
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/buyergender"
+        app:layout_constraintTop_toBottomOf="@id/buyerdob">
 
-    <RadioButton
-        android:id="@+id/buyerm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        <RadioButton
+            android:id="@+id/buyerf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-        android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
 
-        android:buttonTint="@color/white"
+            android:buttonTint="@color/white"
+            android:text="@string/buyerfemale"
+            android:textColor="@color/white"
 
-        android:text="@string/buyermale"
-        android:textColor="@color/white"
+            android:textSize="15sp"
 
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.262"
-        app:layout_constraintStart_toEndOf="@+id/buyerf"
-        app:layout_constraintTop_toBottomOf="@+id/buyerdob" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.122"
+            app:layout_constraintStart_toEndOf="@+id/buyergender"
+            app:layout_constraintTop_toBottomOf="@+id/buyerdob" />
 
-    <RadioButton
-        android:id="@+id/buyero"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        <RadioButton
+            android:id="@+id/buyerm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-        android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
 
-        android:buttonTint="@color/white"
-        android:text="@string/buyerother"
-        android:textColor="@color/white"
+            android:buttonTint="@color/white"
 
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buyerf" />
+            android:text="@string/buyermale"
+            android:textColor="@color/white"
 
-    <RadioButton
-        android:id="@+id/buyernb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.262"
+            app:layout_constraintStart_toEndOf="@+id/buyerf"
+            app:layout_constraintTop_toBottomOf="@+id/buyerdob" />
 
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="24dp"
-        android:buttonTint="@color/white"
+        <RadioButton
+            android:id="@+id/buyero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-        android:text="@string/buyernonbinary"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/buyero"
-        app:layout_constraintTop_toBottomOf="@+id/buyerm" />
+            android:layout_marginTop="10dp"
+
+            android:buttonTint="@color/white"
+            android:text="@string/buyerother"
+            android:textColor="@color/white"
+
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.529"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buyerf" />
+
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/buyersu"

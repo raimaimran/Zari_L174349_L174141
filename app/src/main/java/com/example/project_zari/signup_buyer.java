@@ -73,6 +73,11 @@ public class signup_buyer extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "You must enter your email", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                else if (email.getText().toString().contains("@") != true)
+                {
+                    Toast.makeText(getApplicationContext(), "You must enter a valid email", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 EditText pass = findViewById(R.id.bsupass);
                 if (pass.getText().toString().isEmpty()){
                     Toast.makeText(getApplicationContext(), "You must enter a password", Toast.LENGTH_SHORT).show();
@@ -85,6 +90,11 @@ public class signup_buyer extends AppCompatActivity {
                 EditText cpass = findViewById(R.id.bsuconfirmpass);
                 if (cpass.getText().toString().isEmpty()){
                     Toast.makeText(getApplicationContext(), "You must enter re-enter your password", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (cpass.getText() != pass.getText())
+                {
+                    Toast.makeText(getApplicationContext(), "Passwords do not match", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 Intent intent = new Intent(signup_buyer.this, buyer_homepage.class);
