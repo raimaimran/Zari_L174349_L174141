@@ -9,10 +9,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.io.File;
+import java.io.IOException;
+
 public class SProfileFragment extends Fragment {
+
+    private StorageReference mStorageRef;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -22,6 +34,30 @@ public class SProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_seller_profile,container,false);
+
+//        mStorageRef = FirebaseStorage.getInstance().getReference();
+//
+//        File localFile = null;
+//        try {
+//            localFile = File.createTempFile("logo", "jpg");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        mStorageRef.getFile(localFile)
+//                .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+//                    @Override
+//                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+//                        // Successfully downloaded data to local file
+//                        // ...
+//                    }
+//                }).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception exception) {
+//                // Handle failed download
+//                // ...
+//            }
+//        });
+
 
 //        Button savebtn = view.findViewById(R.id.buttonBtn);
 //        savebtn.setOnClickListener(new View.OnClickListener() {
