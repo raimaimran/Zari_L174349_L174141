@@ -83,7 +83,7 @@ public class signup_seller extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "You must enter re-enter your password", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                
+
                 UploadToFirebase();
 
                 Intent intent = new Intent(signup_seller.this, Seller_Home.class);
