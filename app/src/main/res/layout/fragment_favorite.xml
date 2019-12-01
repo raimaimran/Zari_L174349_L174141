@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <data class = "ItemBinding">
+        <variable name="viewModel"
+            type="com.example.project_zari.ItemViewModel"/>
+
+    </data>
+
+    <LinearLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools"
 
@@ -105,7 +114,7 @@
 
     </LinearLayout>
 
-
+</layout>
     <!--<?xml version="1.0" encoding="utf-8"?>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
