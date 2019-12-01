@@ -76,8 +76,8 @@
     //Buyer Account
     <string name="buyer_name">User Name</string>
     <string name="buyer_email">Buyer Email</string>
-    <string name="buyer_phone">Buyer Phone Number</string>
-    <string name="buyer_add">Buyer Address</string>
+    <string name="buyer_phone">Buyer Date Of Birth</string>
+    <string name="buyer_add">Buyer Gender</string>
     <string name="sign_out">Sign Out</string>
     //
 

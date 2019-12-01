@@ -43,8 +43,7 @@ public class bCartAdapter extends RecyclerView.Adapter<bCartAdapter.bCartViewHol
         holder.prod_image.setImageResource(items.get(position).icon);
         holder.prod_name.setText(items.get(position).title);
         holder.prod_price.setText(items.get(position).price);
-
-
+        holder.quantity.setText(items.get(position).quantity);
     }
 
     @Override
@@ -58,6 +57,7 @@ public class bCartAdapter extends RecyclerView.Adapter<bCartAdapter.bCartViewHol
         ImageView prod_image;
         TextView prod_name;
         TextView prod_price;
+        TextView quantity;
         LinearLayout linearLayout;
 
         public bCartViewHolder(@NonNull View itemView) {
@@ -66,6 +66,7 @@ public class bCartAdapter extends RecyclerView.Adapter<bCartAdapter.bCartViewHol
             prod_image = itemView.findViewById(R.id.prodicon);
             prod_name = itemView.findViewById(R.id.prodname);
             prod_price = itemView.findViewById(R.id.price);
+            quantity = itemView.findViewById(R.id.quantity);
             linearLayout = (LinearLayout) itemView.findViewById(R.id.cartactivity);
         }
     }

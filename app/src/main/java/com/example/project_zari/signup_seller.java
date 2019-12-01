@@ -9,13 +9,23 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class signup_seller extends AppCompatActivity {
+
+    DatabaseReference reff;
+    Seller seller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_seller);
+
+        reff = FirebaseDatabase.getInstance().getReference().child("Seller");
+        seller = new Seller();
+
 
         Button btn = findViewById(R.id.sellersu);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +60,17 @@ public class signup_seller extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "You must enter re-enter your password", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                EditText phone = findViewById(R.id.ssuphone);
+                EditText address = findViewById(R.id.ssuaddress);
+
+                seller.setName(brandname.getText().toString());
+                seller.setEmail(email.getText().toString());
+                seller.setPassword(pass.getText().toString());
+                seller.setPhone(phone.getText().toString());
+                seller.setAddress(address.getText().toString());
+
+                reff.push().setValue(seller);
+
                 Intent intent = new Intent(signup_seller.this, Seller_Home.class);
                 startActivity(intent);
                 finish();
