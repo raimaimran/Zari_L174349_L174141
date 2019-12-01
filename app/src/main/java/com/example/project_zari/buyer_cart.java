@@ -35,8 +35,6 @@ public class buyer_cart extends AppCompatActivity {
         rv.setAdapter(new bCartAdapter(items, this));
 
 
-        NumberPicker np = findViewById(R.id.numpicker);
-
         Button btn = findViewById(R.id.placeorder);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
