@@ -20,7 +20,7 @@
             android:background="@color/zariPurple"
             >
 
-            <SearchView
+            <!--<SearchView
                 android:id="@+id/searchbar"
                 android:layout_width="305dp"
                 android:layout_height="50dp"
@@ -34,6 +34,21 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Welcome"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+
+
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/cart"
+                app:layout_constraintHorizontal_bias="0.076"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/cart"
@@ -43,15 +58,15 @@
                 android:background="@color/fade_white"
                 android:src="@drawable/ic_shopping_cart_black_24dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.768"
-                app:layout_constraintStart_toEndOf="@id/searchbar"
+                app:layout_constraintHorizontal_bias="0.978"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/zariPurple"
-                app:layout_constraintTop_toBottomOf="@+id/searchbar"
+                app:layout_constraintTop_toBottomOf="parent"
                 android:layout_marginTop="10dp"
                  />
         </androidx.constraintlayout.widget.ConstraintLayout>

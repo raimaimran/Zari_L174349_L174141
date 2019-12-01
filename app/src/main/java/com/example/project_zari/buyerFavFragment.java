@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.GridLayout;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +23,7 @@ import java.util.List;
 public class buyerFavFragment extends Fragment {
 
     List<DemoItem2> items;
+    private ItemViewModel itemmodel;
 
     public buyerFavFragment() {
     }
@@ -30,6 +32,9 @@ public class buyerFavFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
+        itemmodel = ViewModelProviders.of(this).get(ItemViewModel.class);
+        itemmodel.init();
     }
 
     public static buyerFavFragment newInstance() {
@@ -49,21 +54,11 @@ public class buyerFavFragment extends Fragment {
 
         items = new ArrayList<>();
 
-        items.add(new DemoItem2("Kapra 1", "125", "It is a cloth", R.drawable.shopitem1, 2));
-        items.add(new DemoItem2("Kapra 2", "2345", "It is a cloth", R.drawable.shopitem2, 2));
-        items.add(new DemoItem2("Kapra 3", "350", "It is a cloth", R.drawable.shopitem3, 3));
-        items.add(new DemoItem2("Kapra 4", "400", "It is a cloth", R.drawable.shopitem4, 5));
-        items.add(new DemoItem2("Kapra 1", "600", "It is a cloth", R.drawable.shopitem1, 2));
-        items.add(new DemoItem2("Kapra 2", "650", "It is a cloth", R.drawable.shopitem2, 2));
-        items.add(new DemoItem2("Kapra 3", "870", "It is a cloth", R.drawable.shopitem3, 3));
-        items.add(new DemoItem2("Kapra 4", "90", "It is a cloth", R.drawable.shopitem4, 5));
-        items.add(new DemoItem2("Kapra 1", "200", "It is a cloth", R.drawable.shopitem1, 2));
-        items.add(new DemoItem2("Kapra 2", "265", "It is a cloth", R.drawable.shopitem2, 2));
-        items.add(new DemoItem2("Kapra 3", "285", "It is a cloth", R.drawable.shopitem3, 3));
-        items.add(new DemoItem2("Kapra 4", "325", "It is a cloth", R.drawable.shopitem4, 5));
+
 
         rv.setLayoutManager(new GridLayoutManager(getContext() , 1));
-        rv.setAdapter(new bfav_Adapter(items, getContext()));
+
+        rv.setAdapter(new bfav_Adapter(itemmodel.getItems(), getContext())); //get value problem
         return view;
     }
 
