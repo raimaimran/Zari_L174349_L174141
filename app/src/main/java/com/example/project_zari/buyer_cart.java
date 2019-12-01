@@ -24,21 +24,21 @@ public class buyer_cart extends AppCompatActivity {
 
         items = new ArrayList<>();
 
-        items.add(new DemoItem2("Kapra 1", "125", "It is a cloth", R.drawable.shopitem1, 2));
-        items.add(new DemoItem2("Kapra 2", "2345", "It is a cloth", R.drawable.shopitem2, 2));
-        items.add(new DemoItem2("Kapra 3", "350", "It is a cloth", R.drawable.shopitem3, 3));
-        items.add(new DemoItem2("Kapra 4", "400", "It is a cloth", R.drawable.shopitem4, 5));
+        final Cart cart = Cart.getInstance();
+
 
         RecyclerView rv = (RecyclerView) findViewById(R.id.buyercartrecycleview);
 
         rv.setLayoutManager(new GridLayoutManager(this , 1));
-        rv.setAdapter(new bCartAdapter(items, this));
+        rv.setAdapter(new bCartAdapter(cart.getItems(), this));
 
 
         Button btn = findViewById(R.id.placeorder);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                cart.emptyCart();
                 Intent intent = new Intent(v.getContext(), order_placed.class);
                 startActivity(intent);
                 finish();

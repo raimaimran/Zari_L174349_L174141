@@ -18,6 +18,8 @@ import android.widget.Toast;
 import android.content.Context;
 
 import com.example.database.repository.customer_repo;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
 
@@ -33,13 +35,18 @@ public class signup_buyer extends AppCompatActivity {
     private RadioGroup radioGroup;
     private RadioButton radioButton;
     private Button btnDisplay;
+    DatabaseReference reff;
+    Customer cust;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_buyer);
 
-        final customer_repo customer_repo = new customer_repo(getApplicationContext());
+
+        reff = FirebaseDatabase.getInstance().getReference().child("Customer");
+        cust = new Customer();
 
         btn = (Button) findViewById(R.id.buyerdob);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -105,11 +112,7 @@ public class signup_buyer extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "You must enter re-enter your password", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                /*if (cpass.getText().toString() != pass.getText().toString())
-                {
-                    Toast.makeText(getApplicationContext(), "Passwords do not match", Toast.LENGTH_SHORT).show();
-                    return;
-                }*/
+
 
 
 
@@ -119,7 +122,6 @@ public class signup_buyer extends AppCompatActivity {
                 String customername = name.getText().toString();
                 String[] gender = new String[1];
                 String dateofBirth = dob;
-
                 radioGroup = (RadioGroup) findViewById(R.id.gendergroup);
 
                 int selectedId = radioGroup.getCheckedRadioButtonId();
@@ -129,9 +131,14 @@ public class signup_buyer extends AppCompatActivity {
 
                 gender[0] =radioButton.getText().toString();
 
+                cust.setName(customername);
+                cust.setEmail(customeremail);
+                cust.setPassword(customerpass);
+                cust.setGender(gender[0]);
+                cust.setDob(dateofBirth);
 
+                reff.push().setValue(cust);
 
-                customer_repo.insertTask(customeremail, customerpass, customername, dateofBirth, gender[0]);
 
                 Intent intent = new Intent(signup_buyer.this, buyer_homepage.class);
                 startActivity(intent);

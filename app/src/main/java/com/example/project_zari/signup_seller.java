@@ -37,8 +37,15 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class signup_seller extends AppCompatActivity {
+
+
+    DatabaseReference reff;
+    Seller seller;
 
     private StorageReference mStorageRef;
     private String selectedImagePath;
@@ -46,11 +53,16 @@ public class signup_seller extends AppCompatActivity {
     String bname;
     public static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 123;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_seller);
         imageuploaded = false;
+
+        reff = FirebaseDatabase.getInstance().getReference().child("Seller");
+        seller = new Seller();
+
 
         Button btn = findViewById(R.id.sellersu);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -83,8 +95,21 @@ public class signup_seller extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "You must enter re-enter your password", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+                EditText phone = findViewById(R.id.ssuphone);
+                EditText address = findViewById(R.id.ssuaddress);
+
+                seller.setName(brandname.getText().toString());
+                seller.setEmail(email.getText().toString());
+                seller.setPassword(pass.getText().toString());
+                seller.setPhone(phone.getText().toString());
+                seller.setAddress(address.getText().toString());
+
+                reff.push().setValue(seller);
+
                 
                 UploadToFirebase();
+
 
                 Intent intent = new Intent(signup_seller.this, Seller_Home.class);
                 startActivity(intent);
