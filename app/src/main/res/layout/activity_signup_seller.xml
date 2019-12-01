@@ -11,8 +11,8 @@
 
     <ImageView
         android:id="@+id/ssup"
-        android:layout_width="226dp"
-        android:layout_height="150dp"
+        android:layout_width="193dp"
+        android:layout_height="117dp"
 
         android:foregroundGravity="center"
         android:src="@drawable/logopurplebg"
@@ -150,8 +150,8 @@
 
         android:textSize="22sp"
 
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ssupass" />
 
