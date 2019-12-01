@@ -34,7 +34,7 @@ public class customer_repo {
         return customer_db;
     }
 
-    public  void insertTask(String email, String pass, String name, String dob, String gender)
+    public void insertTask(String email, String pass, String name, String dob, String gender)
     {
         customer cust = new customer();
         cust.setEmail(email);
@@ -46,7 +46,7 @@ public class customer_repo {
     }
 
     @SuppressLint("StaticFieldLeak")
-    public  void insertTask(final customer cust){
+    public void insertTask(final customer cust){
         new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {

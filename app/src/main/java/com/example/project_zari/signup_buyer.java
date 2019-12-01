@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+import android.content.Context;
 
 import com.example.database.repository.customer_repo;
 
@@ -33,12 +34,12 @@ public class signup_buyer extends AppCompatActivity {
     private RadioButton radioButton;
     private Button btnDisplay;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_buyer);
+
+        final customer_repo customer_repo = new customer_repo(getApplicationContext());
 
         btn = (Button) findViewById(R.id.buyerdob);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -116,7 +117,8 @@ public class signup_buyer extends AppCompatActivity {
                 String customeremail = email.getText().toString();
                 String customerpass = pass.getText().toString();
                 String customername = name.getText().toString();
-                final String[] gender = new String[1];
+                String[] gender = new String[1];
+                String dateofBirth = dob;
 
                 radioGroup = (RadioGroup) findViewById(R.id.gendergroup);
 
@@ -125,13 +127,11 @@ public class signup_buyer extends AppCompatActivity {
                 // find the radiobutton by returned id
                 radioButton = (RadioButton) findViewById(selectedId);
 
-                Toast.makeText(signup_buyer.this,
-                        radioButton.getText(), Toast.LENGTH_SHORT).show();
                 gender[0] =radioButton.getText().toString();
 
 
 
-                //customer_repo.insertTask(customeremail, customerpass, customername, dob, gender[0]);
+                customer_repo.insertTask(customeremail, customerpass, customername, dateofBirth, gender[0]);
 
                 Intent intent = new Intent(signup_buyer.this, buyer_homepage.class);
                 startActivity(intent);
