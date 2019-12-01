@@ -12,7 +12,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import com.example.database.repository.customer_repo;
 
 import java.util.Calendar;
 
@@ -24,6 +28,12 @@ public class signup_buyer extends AppCompatActivity {
 
     private DatePickerDialog.OnDateSetListener onDateSetListener;
     Button btn;
+    String dob;
+    private RadioGroup radioGroup;
+    private RadioButton radioButton;
+    private Button btnDisplay;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,10 +65,12 @@ public class signup_buyer extends AppCompatActivity {
                /* Log.d(TAG, "onDateSet: mm/dd/yyyy " + month + "/" + day + "/" + year);*/
 
                 String date = month + "/" + day + "/" + year;
+                dob = date;
                 btn.setText(date);
             }
         };
 
+        //checks
         Button btn1 = (Button) findViewById(R.id.buyersu);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,11 +104,35 @@ public class signup_buyer extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "You must enter re-enter your password", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (cpass.getText() != pass.getText())
+                /*if (cpass.getText().toString() != pass.getText().toString())
                 {
                     Toast.makeText(getApplicationContext(), "Passwords do not match", Toast.LENGTH_SHORT).show();
                     return;
-                }
+                }*/
+
+
+
+                //insert into db
+                String customeremail = email.getText().toString();
+                String customerpass = pass.getText().toString();
+                String customername = name.getText().toString();
+                final String[] gender = new String[1];
+
+                radioGroup = (RadioGroup) findViewById(R.id.gendergroup);
+
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+
+                // find the radiobutton by returned id
+                radioButton = (RadioButton) findViewById(selectedId);
+
+                Toast.makeText(signup_buyer.this,
+                        radioButton.getText(), Toast.LENGTH_SHORT).show();
+                gender[0] =radioButton.getText().toString();
+
+
+
+                //customer_repo.insertTask(customeremail, customerpass, customername, dob, gender[0]);
+
                 Intent intent = new Intent(signup_buyer.this, buyer_homepage.class);
                 startActivity(intent);
                 finish();

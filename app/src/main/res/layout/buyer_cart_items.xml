@@ -78,20 +78,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
 
-                <NumberPicker
-                    android:id="@+id/numpicker"
-                    android:layout_width="48dp"
-                    android:layout_height="42dp"
 
-                    android:layout_marginTop="4dp"
-                    android:scrollbarStyle="insideOverlay"
-
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.713"
-                    app:layout_constraintStart_toEndOf="@id/prodname"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                </NumberPicker>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
