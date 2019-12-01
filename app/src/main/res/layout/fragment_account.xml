@@ -75,7 +75,7 @@
     </TextView>
 
     <TextView
-        android:id="@+id/userphone"
+        android:id="@+id/userdob"
         android:layout_width="182dp"
         android:layout_height="34dp"
         android:layout_marginTop="12dp"
@@ -91,7 +91,7 @@
     </TextView>
 
     <TextView
-        android:id="@+id/useradd"
+        android:id="@+id/usergender"
         android:layout_width="182dp"
         android:layout_height="34dp"
         android:layout_marginTop="12dp"
@@ -103,7 +103,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userphone">
+        app:layout_constraintTop_toBottomOf="@id/userdob">
     </TextView>
 
     <Button
