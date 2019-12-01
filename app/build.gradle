@@ -35,5 +35,9 @@ dependencies {
     implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
 
     implementation 'com.google.firebase:firebase-database:19.2.0'
+    implementation 'com.google.firebase:firebase-analytics:17.2.0'
+
     implementation project(path: ':database')
 }
+
+apply plugin: 'com.google.gms.google-services'
