@@ -101,6 +101,7 @@ public class signinBuyer extends AppCompatActivity {
                                     Intent intent = new Intent(signinBuyer.this, buyer_homepage.class);
                                     startActivity(intent);
                                     finish();
+                                    break;
                                 }
 
                             }

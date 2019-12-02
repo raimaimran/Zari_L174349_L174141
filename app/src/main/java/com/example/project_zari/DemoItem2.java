@@ -10,6 +10,14 @@ public class DemoItem2 {
     public String Desc;
     public int quantity = 100;
 
+
+    DemoItem2(){}
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+
     public void setTitle(String title) {
         this.title = title;
     }

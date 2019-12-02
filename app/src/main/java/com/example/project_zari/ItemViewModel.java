@@ -21,4 +21,8 @@ public class ItemViewModel extends ViewModel {
         return items;
     }
 
+    public void setItems(DemoItem2 obj){
+        items.add(obj);
+    }
+
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -18,8 +19,11 @@ import android.widget.Toast;
 import android.content.Context;
 
 import com.example.database.repository.customer_repo;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 
@@ -36,8 +40,9 @@ public class signup_buyer extends AppCompatActivity {
     private RadioButton radioButton;
     private Button btnDisplay;
     DatabaseReference reff;
+    DatabaseReference reff2;
     Customer cust;
-
+    SharedPreferences sharedpreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +51,7 @@ public class signup_buyer extends AppCompatActivity {
 
 
         reff = FirebaseDatabase.getInstance().getReference().child("Customer");
+        reff2 = FirebaseDatabase.getInstance().getReference("Customer");
         cust = new Customer();
 
         btn = (Button) findViewById(R.id.buyerdob);
@@ -83,12 +89,12 @@ public class signup_buyer extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText name = findViewById(R.id.bsuname);
+                final EditText name = findViewById(R.id.bsuname);
                 if (name.getText().toString().isEmpty()){
                     Toast.makeText(getApplicationContext(), "You must enter your name", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                EditText email = findViewById(R.id.bsuemail);
+                final EditText email = findViewById(R.id.bsuemail);
                 if (email.getText().toString().isEmpty()){
                     Toast.makeText(getApplicationContext(), "You must enter your email", Toast.LENGTH_SHORT).show();
                     return;
@@ -117,11 +123,11 @@ public class signup_buyer extends AppCompatActivity {
 
 
                 //insert into db
-                String customeremail = email.getText().toString();
+                final String customeremail = email.getText().toString();
                 String customerpass = pass.getText().toString();
-                String customername = name.getText().toString();
-                String[] gender = new String[1];
-                String dateofBirth = dob;
+                final String customername = name.getText().toString();
+                final String[] gender = new String[1];
+                final String dateofBirth = dob;
                 radioGroup = (RadioGroup) findViewById(R.id.gendergroup);
 
                 int selectedId = radioGroup.getCheckedRadioButtonId();
@@ -137,12 +143,49 @@ public class signup_buyer extends AppCompatActivity {
                 cust.setGender(gender[0]);
                 cust.setDob(dateofBirth);
 
-                reff.push().setValue(cust);
+                reff2.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
 
+                        boolean found = false;
+                        for (DataSnapshot data : dataSnapshot.getChildren()) {
+                            //If email exists then toast shows else store the data on new key
+                            String email = data.child("email").getValue().toString();
+                            System.out.println(email);
+                            System.out.println(customeremail);
+                            if (email.equals(customeremail)) {
+                                found = true;
 
-                Intent intent = new Intent(signup_buyer.this, buyer_homepage.class);
-                startActivity(intent);
-                finish();
+                            }
+                        }
+
+                        if (found == false){
+                            reff.push().setValue(cust);
+                            sharedpreferences = getSharedPreferences("buyersignin", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedpreferences.edit();
+                            editor.putString("email", customeremail);
+                            editor.putString("name", customername);
+                            editor.putString("dob", dateofBirth);
+                            editor.putString("gender", gender[0]);
+
+                            editor.apply();
+                            Toast.makeText(signup_buyer.this, "Redirecting", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(signup_buyer.this, buyer_homepage.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                        else {
+                            Toast.makeText(signup_buyer.this, "E-mail already exists.", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+
+                    @Override
+                    public void onCancelled(final DatabaseError databaseError) {
+                    }
+                });
+                /*reff.push().setValue(cust);*/
+
             }
         });
 
