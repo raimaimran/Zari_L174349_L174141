@@ -248,7 +248,7 @@
 
     </Button>
 
-    <Button
+    <!--<Button
         android:id="@+id/visitshop"
         android:layout_width="240dp"
         android:layout_height="61dp"
@@ -262,6 +262,6 @@
         android:padding="5dp"
         >
 
-    </Button>
+    </Button>-->
 
 </LinearLayout>

@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,12 +60,14 @@ public class buyer_cart extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
-
-                cart.emptyCart();
-                Intent intent = new Intent(v.getContext(), order_placed.class);
-                startActivity(intent);
-                finish();
+                if(cart.getItems().size()==0)
+                    Toast.makeText(getApplicationContext(), "Fill your cart first to place order", Toast.LENGTH_SHORT).show();
+                else {
+                    cart.emptyCart();
+                    Intent intent = new Intent(v.getContext(), order_placed.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
 
