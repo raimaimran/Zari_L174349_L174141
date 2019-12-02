@@ -7,8 +7,17 @@ public class Seller {
     String password;
     String phone;
     String address;
+    String logo;
 
     Seller(){}
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
+    }
 
     public void setName(String name) {
         this.name = name;

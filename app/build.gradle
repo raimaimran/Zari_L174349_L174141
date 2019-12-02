@@ -47,6 +47,9 @@ dependencies {
     
     implementation project(path: ':database')
     implementation 'com.google.firebase:firebase-auth:19.2.0'
+
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

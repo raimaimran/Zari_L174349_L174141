@@ -99,16 +99,16 @@ public class signup_seller extends AppCompatActivity {
                 EditText phone = findViewById(R.id.ssuphone);
                 EditText address = findViewById(R.id.ssuaddress);
 
+                UploadToFirebase();
+
                 seller.setName(brandname.getText().toString());
                 seller.setEmail(email.getText().toString());
                 seller.setPassword(pass.getText().toString());
                 seller.setPhone(phone.getText().toString());
                 seller.setAddress(address.getText().toString());
+                seller.setLogo(bname);
 
                 reff.push().setValue(seller);
-
-                
-                UploadToFirebase();
 
 
                 Intent intent = new Intent(signup_seller.this, Seller_Home.class);
