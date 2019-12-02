@@ -42,6 +42,10 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.StorageReference;
+
 public class SellerAddProduct extends AppCompatActivity {
 
     String imgPath;
