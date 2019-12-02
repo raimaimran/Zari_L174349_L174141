@@ -1,7 +1,12 @@
 package com.example.project_zari;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +20,8 @@ public class order_placed extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_placed);
 
+
+
         Button btn = (Button) findViewById(R.id.continueshop);
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -26,4 +33,6 @@ public class order_placed extends AppCompatActivity {
             }
         });
     }
+
+
 }

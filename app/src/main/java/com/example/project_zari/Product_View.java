@@ -78,9 +78,10 @@ public class Product_View extends AppCompatActivity {
                 Float rating = intent.getExtras().getFloat("Product Rating");
                 String desc = intent.getExtras().getString("Product Desc");
                 String num = numpicker.getNumber();
+                int i = Integer.parseInt(num);
 
                 DemoItem2 obj = new DemoItem2(title,price,desc,icon,rating );
-                obj.setQuantity(num);
+                obj.setQuantity(i);
                 Toast.makeText(getApplicationContext(), "ADDED TO CART", Toast.LENGTH_SHORT).show();
                 cart.addToCart(obj);
             }

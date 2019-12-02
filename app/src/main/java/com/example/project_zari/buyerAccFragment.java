@@ -2,6 +2,7 @@ package com.example.project_zari;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -9,6 +10,7 @@ import android.provider.Contacts;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -21,6 +23,7 @@ public class buyerAccFragment extends Fragment {
 
     SharedPreferences sharedpreferences;
     private TextView name, email, dob, gender;
+    Button btn;
 
     public buyerAccFragment() {
     }
@@ -39,7 +42,7 @@ public class buyerAccFragment extends Fragment {
 
         SharedPreferences preferences = this.getActivity().getSharedPreferences("buyersignin", Context.MODE_PRIVATE);
 
-        System.out.println(preferences.getString("name", ""));
+        /*System.out.println(preferences.getString("name", ""));*/
         String cust_name = preferences.getString("name", "Name: ");
         String cust_email = preferences.getString("email", "Email: ");
         String cust_dob = preferences.getString("dob", "DOB: ");
@@ -54,6 +57,16 @@ public class buyerAccFragment extends Fragment {
         email.setText(cust_email);
         dob.setText(cust_dob);
         gender.setText(cust_gender);
+
+        btn = (Button) view.findViewById(R.id.logout);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 

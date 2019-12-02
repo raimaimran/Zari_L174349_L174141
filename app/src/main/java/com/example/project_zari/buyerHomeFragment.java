@@ -1,7 +1,9 @@
 package com.example.project_zari;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.AdaptiveIconDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -24,6 +27,7 @@ import java.util.List;
 public class buyerHomeFragment extends Fragment {
 
     List<DemoItem2> items;
+    TextView txt;
 
     public buyerHomeFragment() {
     }
@@ -51,6 +55,13 @@ public class buyerHomeFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_blank_bhome, container, false);
         RecyclerView rv = view.findViewById(R.id.buyerhomerecycleview);
+
+        SharedPreferences preferences = this.getActivity().getSharedPreferences("buyersignin", Context.MODE_PRIVATE);
+
+
+        String cust_name = preferences.getString("name", "Name: ");
+        txt = (TextView) view.findViewById(R.id.welcome);
+        txt.setText("Welcome " + cust_name );
 
 
         ImageButton btn = (ImageButton) view.findViewById(R.id.cart);
