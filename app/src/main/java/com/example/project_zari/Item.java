@@ -2,61 +2,26 @@ package com.example.project_zari;
 
 public class Item {
 
+    String email;
     String name;
     String desc;
-    int quantity = 100;
     int price;
     String category;
-    String selleremail;
+    String image;
+    String sizechart;
+    int rating;
+    int quantitysold;
 
-    public String getName() {
-        return name;
-    }
 
-    public String getSelleremail() {
-        return selleremail;
-    }
-
-    public void setSelleremail(String selleremail) {
-        this.selleremail = selleremail;
-    }
-
-    public void setName(String name) {
+    public Item(String email, String name, String desc, int price, String category, String image, String sizechart) {
+        this.email = email;
         this.name = name;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
         this.desc = desc;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
         this.price = price;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
         this.category = category;
-    }
-
-    public Item() {
+        this.image = image;
+        this.sizechart = sizechart;
+        this.rating = 0;
+        this.quantitysold = 0;
     }
 }
