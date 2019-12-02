@@ -23,6 +23,7 @@ public class bCartAdapter extends RecyclerView.Adapter<bCartAdapter.bCartViewHol
     private List<DemoItem2> items;
     private Context context;
 
+
     public bCartAdapter(List<DemoItem2> item, Context context) {
         this.items = item;
         this.context = context;

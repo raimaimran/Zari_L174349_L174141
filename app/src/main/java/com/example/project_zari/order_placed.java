@@ -21,6 +21,36 @@ public class order_placed extends AppCompatActivity {
         setContentView(R.layout.activity_order_placed);
 
 
+        NotificationManager notificationManager = (NotificationManager) getApplication().getSystemService(Context.NOTIFICATION_SERVICE);
+
+        int notificationId = 1;
+        String channelId = "channel-01";
+        String channelName = "Channel Name";
+        int importance = NotificationManager.IMPORTANCE_HIGH;
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+
+
+            NotificationChannel mChannel = new NotificationChannel(
+                    channelId, channelName, importance);
+            mChannel.setDescription("Order Arriving");
+            notificationManager.createNotificationChannel(mChannel);
+        }
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext())
+                .setSmallIcon(R.mipmap.ic_launcher_round)
+                .setContentTitle("Order is Arriving")
+                .setContentText("Get Excited! Your Order is on its way..");
+
+        // Creates the intent needed to show the notification
+        Intent notificationIntent = new Intent(getApplicationContext(), order_placed.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(getApplicationContext(), 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        builder.setContentIntent(contentIntent);
+
+        // Add as notification
+        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        manager.notify(0, builder.build());
+
 
         Button btn = (Button) findViewById(R.id.continueshop);
 
