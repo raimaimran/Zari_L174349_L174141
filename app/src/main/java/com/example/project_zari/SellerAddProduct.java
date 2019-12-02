@@ -59,47 +59,12 @@ public class SellerAddProduct extends AppCompatActivity {
     private SharedPreferences sharedpreferences;
     public static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 123;
     private Context mContext;
-    FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    //FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.seller_add_product);
-
-        FirebaseUser user = mAuth.getCurrentUser();
-        if (user != null) {
-            // do your stuff
-        } else {
-            signInAnonymously();
-        }
-
-        if (mAuth.getCurrentUser() != null)
-        {
-            mAuth.getCurrentUser().reload();
-        }
-        else
-        {
-            mAuth.signInAnonymously()
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>()
-                    {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task)
-                        {
-                            //Log.d("FirebaseAuth", "signInAnonymously:onComplete:" + task.isSuccessful());
-
-                            // If sign in fails, display a message to the user. If sign in succeeds
-                            // the auth state listener will be notified and logic to handle the
-                            // signed in user can be handled in the listener.
-                            if (!task.isSuccessful())
-                            {
-                                //Log.w("FirebaseAuth", "signInAnonymously", task.getException());
-                                Toast.makeText(SellerAddProduct.this, "Authentication failed.",
-                                        Toast.LENGTH_SHORT).show();
-                            }
-                            // ...
-                        }
-                    });
-        }
 
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Item");
         this.mContext=getApplicationContext();
@@ -107,7 +72,8 @@ public class SellerAddProduct extends AppCompatActivity {
         imguploaded = false;
         sizeuploaded = false;
 
-
+        imgPath = "";
+        sizePath = "";
 
 
         mStorageRef = FirebaseStorage.getInstance().getReference();
@@ -124,12 +90,6 @@ public class SellerAddProduct extends AppCompatActivity {
                     intent.setType("image/*");
                     intent.setAction(Intent.ACTION_GET_CONTENT);
                     startActivityForResult(Intent.createChooser(intent, "Select Picture"), 1);
-//                    if (imgPath!=null){
-//                        UploadToFirebase(imgPath);
-//                    }
-//                    else{
-//                        Toast.makeText(getApplicationContext(), "You must select an image first", Toast.LENGTH_SHORT).show();
-//                    }
                 }
 
             }
@@ -232,20 +192,20 @@ public class SellerAddProduct extends AppCompatActivity {
         });
     }
 
-    private void signInAnonymously() {
-        mAuth.signInAnonymously().addOnSuccessListener(this, new  OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
-                // do your stuff
-            }
-        })
-                .addOnFailureListener(this, new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        //Log.e(TAG, "signInAnonymously:FAILURE", exception);
-                    }
-                });
-    }
+//    private void signInAnonymously() {
+//        mAuth.signInAnonymously().addOnSuccessListener(this, new  OnSuccessListener<AuthResult>() {
+//            @Override
+//            public void onSuccess(AuthResult authResult) {
+//                // do your stuff
+//            }
+//        })
+//                .addOnFailureListener(this, new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception exception) {
+//                        //Log.e(TAG, "signInAnonymously:FAILURE", exception);
+//                    }
+//                });
+//    }
 
 
     public void UploadToFirebase(final String path){
@@ -258,6 +218,7 @@ public class SellerAddProduct extends AppCompatActivity {
         if (i > 0) {
             extension = strFileName.substring(i+1);
         }
+        //if (imgPath!=null){
         if (path.matches(imgPath)){
             imgname = imgname.concat(".");
             imgname = imgname.concat(extension);

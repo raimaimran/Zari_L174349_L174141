@@ -100,11 +100,11 @@ public class signinSeller extends AppCompatActivity {
                                     //finish();
 
                                 }
+                                else{
+                                    Toast.makeText(getApplicationContext(),"Failure to Sign In", Toast.LENGTH_SHORT).show();
+                                }
+                            }
 
-                            }
-                            else{
-                                Toast.makeText(getApplicationContext(),"Failure to Sign In", Toast.LENGTH_SHORT).show();
-                            }
                         }
                     }
 
