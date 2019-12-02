@@ -8,7 +8,7 @@ public class DemoItem2 {
     public int icon;
     public float rating;
     public String Desc;
-    public String quantity;
+    public int quantity = 100;
 
     public void setTitle(String title) {
         this.title = title;
@@ -37,7 +37,10 @@ public class DemoItem2 {
         this.rating = r;
         this.Desc = d;
     }
-    public void setQuantity(String q){ this.quantity = quantity;}
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
     public String getTitle() {
         return title;

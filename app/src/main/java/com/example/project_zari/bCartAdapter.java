@@ -43,7 +43,9 @@ public class bCartAdapter extends RecyclerView.Adapter<bCartAdapter.bCartViewHol
         holder.prod_image.setImageResource(items.get(position).icon);
         holder.prod_name.setText(items.get(position).title);
         holder.prod_price.setText(items.get(position).price);
-        holder.quantity.setText(items.get(position).quantity);
+        int n = items.get(position).quantity;
+        String quan = "Quantity: "+ n;
+        holder.quantity.setText(quan);
     }
 
     @Override
