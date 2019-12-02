@@ -101,7 +101,7 @@ public class SellerAddProduct extends AppCompatActivity {
                     });
         }
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("Item");
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Item");
         this.mContext=getApplicationContext();
 
         imguploaded = false;
@@ -216,7 +216,14 @@ public class SellerAddProduct extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please wait while the image uploads", Toast.LENGTH_SHORT).show();
                 }
 
-                Item myitem = new Item(email,prodname,proddesc,prodprice,type[0],imgname,sizename);
+                Item myitem = new Item();
+                myitem.setName(prodname);
+                myitem.setEmail(email);
+                myitem.setDesc(proddesc);
+                myitem.setPrice(prodprice);
+                myitem.setCategory(type[0]);
+                myitem.setImage(imgname);
+                myitem.setSizechart(sizename);
                 mDatabase.push().setValue(myitem);
 
                 Toast.makeText(getApplicationContext(), "Your product has been added!", Toast.LENGTH_SHORT).show();
