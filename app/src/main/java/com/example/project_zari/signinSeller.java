@@ -97,7 +97,8 @@ public class signinSeller extends AppCompatActivity {
 
                                     Intent intent = new Intent(signinSeller.this, Seller_Home.class);
                                     startActivity(intent);
-                                    finish();
+                                    //finish();
+
                                 }
 
                             }
