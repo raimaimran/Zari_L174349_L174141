@@ -87,7 +87,15 @@ public class SProfileFragment extends Fragment {
             }
         });
 
+        Button btn = (Button) view.findViewById(R.id.logoutBtn);
 
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 

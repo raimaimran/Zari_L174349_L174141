@@ -42,12 +42,16 @@ public class SActivityFragment extends Fragment {
     private StorageReference mStorageRef;
     private DatabaseReference mDatabase;
     private SharedPreferences sharedpreferences;
+    Boolean hasitems;
+    int hasitemscount;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_seller_activity,container,false);
 
         mStorageRef = FirebaseStorage.getInstance().getReference();
+        hasitems = false;
+        hasitemscount = 0;
 
         this.context=getContext();
         sharedpreferences = context.getSharedPreferences("sellersignin", Context.MODE_PRIVATE);
@@ -110,6 +114,10 @@ public class SActivityFragment extends Fragment {
                             r3 = r;
                             best3 = counter;
                         }
+                        hasitemscount++;
+                        if (hasitemscount==3){
+                            hasitems = true;
+                        }
                     }
                     counter++;
                 }
@@ -128,48 +136,54 @@ public class SActivityFragment extends Fragment {
                 int prodr;
                 counter = 0;
                 for( DataSnapshot uniqueKeySnapShot : dataSnapshot.getChildren()) {
-                    if (counter == mostbought1){
-                        quant = uniqueKeySnapShot.child("quantitysold").getValue().toString();
-                        quant = quant.concat(" sold");
-                        besttext1.setText(quant);
-                        s1 = uniqueKeySnapShot.child("image").getValue().toString();
-                    }
-                    else if (counter == mostbought2){
-                        quant = uniqueKeySnapShot.child("quantitysold").getValue().toString();
-                        quant = quant.concat(" sold");
-                        besttext2.setText(quant);
-                        s2 = uniqueKeySnapShot.child("image").getValue().toString();
-                    }
-                    else if (counter == mostbought3){
-                        quant = uniqueKeySnapShot.child("quantitysold").getValue().toString();
-                        quant = quant.concat(" sold");
-                        besttext3.setText(quant);
-                        s3 = uniqueKeySnapShot.child("image").getValue().toString();
+                    String email = uniqueKeySnapShot.child("email").getValue().toString();
+
+                    if(email.equals(selleremail) ) {
+                        if (counter == mostbought1) {
+                            quant = uniqueKeySnapShot.child("quantitysold").getValue().toString();
+                            quant = quant.concat(" sold");
+                            besttext1.setText(quant);
+                            s1 = uniqueKeySnapShot.child("image").getValue().toString();
+                        } else if (counter == mostbought2) {
+                            quant = uniqueKeySnapShot.child("quantitysold").getValue().toString();
+                            quant = quant.concat(" sold");
+                            besttext2.setText(quant);
+                            s2 = uniqueKeySnapShot.child("image").getValue().toString();
+                        } else if (counter == mostbought3) {
+                            quant = uniqueKeySnapShot.child("quantitysold").getValue().toString();
+                            quant = quant.concat(" sold");
+                            besttext3.setText(quant);
+                            s3 = uniqueKeySnapShot.child("image").getValue().toString();
+                        }
                     }
                     counter++;
+
                 }
 
                 counter = 0;
                 for( DataSnapshot uniqueKeySnapShot : dataSnapshot.getChildren()) {
-                    if (counter == best1){
-                        rate = uniqueKeySnapShot.child("rating").getValue().toString();
-                        prodr = Integer.parseInt(rate);
-                        toprating1.setRating(prodr);
-                        t1 = uniqueKeySnapShot.child("image").getValue().toString();
-                    }
-                    else if (counter == best2){
-                        rate = uniqueKeySnapShot.child("rating").getValue().toString();
-                        prodr = Integer.parseInt(rate);
-                        toprating2.setRating(prodr);
-                        t2 = uniqueKeySnapShot.child("image").getValue().toString();
-                    }
-                    else if (counter == best3){
-                        rate = uniqueKeySnapShot.child("rating").getValue().toString();
-                        prodr = Integer.parseInt(rate);
-                        toprating3.setRating(prodr);
-                        t3 = uniqueKeySnapShot.child("image").getValue().toString();
+                    String email = uniqueKeySnapShot.child("email").getValue().toString();
+
+                    if(email.equals(selleremail) ) {
+                        if (counter == best1) {
+                            rate = uniqueKeySnapShot.child("rating").getValue().toString();
+                            prodr = Integer.parseInt(rate);
+                            toprating1.setRating(prodr);
+                            t1 = uniqueKeySnapShot.child("image").getValue().toString();
+                        } else if (counter == best2) {
+                            rate = uniqueKeySnapShot.child("rating").getValue().toString();
+                            prodr = Integer.parseInt(rate);
+                            toprating2.setRating(prodr);
+                            t2 = uniqueKeySnapShot.child("image").getValue().toString();
+                        } else if (counter == best3) {
+                            rate = uniqueKeySnapShot.child("rating").getValue().toString();
+                            prodr = Integer.parseInt(rate);
+                            toprating3.setRating(prodr);
+                            t3 = uniqueKeySnapShot.child("image").getValue().toString();
+                        }
                     }
                     counter++;
+
                 }
 
                 final ImageView bestimg1 = view.findViewById(R.id.bestsellimg1);
@@ -180,102 +194,107 @@ public class SActivityFragment extends Fragment {
                 final ImageView topimg2 = view.findViewById(R.id.topimg2);
                 final ImageView topimg3 = view.findViewById(R.id.topimg3);
 
-                StorageReference photoref = mStorageRef.child(s1);
-                photoref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        String imageURL = uri.toString();
-                        Glide.with(context).load(imageURL).into(bestimg1);
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        // Handle failed download
-                        // ...
-                        System.out.println("Failed to download");
-                    }
-                });
+                if (hasitems == true) {
+                    StorageReference photoref = mStorageRef.child(s1);
+                    photoref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            String imageURL = uri.toString();
+                            Glide.with(context).load(imageURL).into(bestimg1);
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception exception) {
+                            // Handle failed download
+                            // ...
+                            System.out.println("Failed to download");
+                        }
+                    });
 
-                photoref = mStorageRef.child(s2);
-                photoref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        String imageURL = uri.toString();
-                        Glide.with(context).load(imageURL).into(bestimg2);
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        // Handle failed download
-                        // ...
-                        System.out.println("Failed to download");
-                    }
-                });
+                    photoref = mStorageRef.child(s2);
+                    photoref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            String imageURL = uri.toString();
+                            Glide.with(context).load(imageURL).into(bestimg2);
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception exception) {
+                            // Handle failed download
+                            // ...
+                            System.out.println("Failed to download");
+                        }
+                    });
 
-                photoref = mStorageRef.child(s3);
-                photoref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        String imageURL = uri.toString();
-                        Glide.with(context).load(imageURL).into(bestimg3);
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        // Handle failed download
-                        // ...
-                        System.out.println("Failed to download");
-                    }
-                });
+                    photoref = mStorageRef.child(s3);
+                    photoref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            String imageURL = uri.toString();
+                            Glide.with(context).load(imageURL).into(bestimg3);
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception exception) {
+                            // Handle failed download
+                            // ...
+                            System.out.println("Failed to download");
+                        }
+                    });
 
 
-                photoref = mStorageRef.child(t1);
-                photoref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        String imageURL = uri.toString();
-                        Glide.with(context).load(imageURL).into(topimg1);
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        // Handle failed download
-                        // ...
-                        System.out.println("Failed to download");
-                    }
-                });
+                    photoref = mStorageRef.child(t1);
+                    photoref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            String imageURL = uri.toString();
+                            Glide.with(context).load(imageURL).into(topimg1);
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception exception) {
+                            // Handle failed download
+                            // ...
+                            System.out.println("Failed to download");
+                        }
+                    });
 
-                photoref = mStorageRef.child(t2);
-                photoref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        String imageURL = uri.toString();
-                        Glide.with(context).load(imageURL).into(topimg2);
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        // Handle failed download
-                        // ...
-                        System.out.println("Failed to download");
-                    }
-                });
+                    photoref = mStorageRef.child(t2);
+                    photoref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            String imageURL = uri.toString();
+                            Glide.with(context).load(imageURL).into(topimg2);
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception exception) {
+                            // Handle failed download
+                            // ...
+                            System.out.println("Failed to download");
+                        }
+                    });
 
-                photoref = mStorageRef.child(t3);
-                photoref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        String imageURL = uri.toString();
-                        Glide.with(context).load(imageURL).into(topimg3);
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        // Handle failed download
-                        // ...
-                        System.out.println("Failed to download");
-                    }
-                });
+                    photoref = mStorageRef.child(t3);
+                    photoref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            String imageURL = uri.toString();
+                            Glide.with(context).load(imageURL).into(topimg3);
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception exception) {
+                            // Handle failed download
+                            // ...
+                            System.out.println("Failed to download");
+                        }
+                    });
+                }
+                else{
+                    System.out.println("Error");
+                }
             }
 
             @Override
