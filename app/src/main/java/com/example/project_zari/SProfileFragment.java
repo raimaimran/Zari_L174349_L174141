@@ -61,8 +61,6 @@ public class SProfileFragment extends Fragment {
 
         EditText name = view.findViewById(R.id.nameeditText);
         name.setText(bname);
-        EditText desc = view.findViewById(R.id.desceditText);
-
         EditText phone = view.findViewById(R.id.phoneeditText);
         phone.setText(phoneno);
         EditText add = view.findViewById(R.id.addedittext);
