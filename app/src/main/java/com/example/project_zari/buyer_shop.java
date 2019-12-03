@@ -26,35 +26,35 @@ public class buyer_shop extends AppCompatActivity {
         String s;
         Drawable d;
 
-        id = getResources().getIdentifier("shopitem1","drawable","com.example.project_zari");
-        d=getResources().getDrawable(id);
-        DemoItem newitem=new DemoItem("Red Lehnga","Beautiful embroidered lehnga with long kameez and dupatta.",d,5);
-        shopitems.add(newitem);
-
-        id = getResources().getIdentifier("shopitem2","drawable","com.example.project_zari");
-        d=getResources().getDrawable(id);
-        newitem=new DemoItem("Mehndi dress","Yellow garara with green shirt, perfect for Mehndi or Dholki..",d,4);
-        shopitems.add(newitem);
-
-        id = getResources().getIdentifier("shopitem3","drawable","com.example.project_zari");
-        d=getResources().getDrawable(id);
-        newitem=new DemoItem("Cream colored dress","Traditional maxi, cream colored.",d,3);
-        shopitems.add(newitem);
-
-        id = getResources().getIdentifier("shopitem4","drawable","com.example.project_zari");
-        d=getResources().getDrawable(id);
-        newitem=new DemoItem("White long dress","White dress with golden embroidered dupatta.",d,1);
-        shopitems.add(newitem);
-
-        id = getResources().getIdentifier("shopitem5","drawable","com.example.project_zari");
-        d=getResources().getDrawable(id);
-        newitem=new DemoItem("Diamond earrings","Diamond earrings with neat finish..",d,2);
-        shopitems.add(newitem);
-
-        id = getResources().getIdentifier("shopitem6","drawable","com.example.project_zari");
-        d=getResources().getDrawable(id);
-        newitem=new DemoItem("Navy blue dress","Gold embroidered blue lehnga with net dupatta, very elegant",d,5);
-        shopitems.add(newitem);
+//        id = getResources().getIdentifier("shopitem1","drawable","com.example.project_zari");
+//        d=getResources().getDrawable(id);
+//        DemoItem newitem=new DemoItem("Red Lehnga","Beautiful embroidered lehnga with long kameez and dupatta.",d,5);
+//        shopitems.add(newitem);
+//
+//        id = getResources().getIdentifier("shopitem2","drawable","com.example.project_zari");
+//        d=getResources().getDrawable(id);
+//        newitem=new DemoItem("Mehndi dress","Yellow garara with green shirt, perfect for Mehndi or Dholki..",d,4);
+//        shopitems.add(newitem);
+//
+//        id = getResources().getIdentifier("shopitem3","drawable","com.example.project_zari");
+//        d=getResources().getDrawable(id);
+//        newitem=new DemoItem("Cream colored dress","Traditional maxi, cream colored.",d,3);
+//        shopitems.add(newitem);
+//
+//        id = getResources().getIdentifier("shopitem4","drawable","com.example.project_zari");
+//        d=getResources().getDrawable(id);
+//        newitem=new DemoItem("White long dress","White dress with golden embroidered dupatta.",d,1);
+//        shopitems.add(newitem);
+//
+//        id = getResources().getIdentifier("shopitem5","drawable","com.example.project_zari");
+//        d=getResources().getDrawable(id);
+//        newitem=new DemoItem("Diamond earrings","Diamond earrings with neat finish..",d,2);
+//        shopitems.add(newitem);
+//
+//        id = getResources().getIdentifier("shopitem6","drawable","com.example.project_zari");
+//        d=getResources().getDrawable(id);
+//        newitem=new DemoItem("Navy blue dress","Gold embroidered blue lehnga with net dupatta, very elegant",d,5);
+//        shopitems.add(newitem);
 
 
         RecyclerView rv = (RecyclerView) findViewById(R.id.shop_recyclerview);

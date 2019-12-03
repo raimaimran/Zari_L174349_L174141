@@ -72,18 +72,6 @@ public class SProfileFragment extends Fragment {
 
         mStorageRef = FirebaseStorage.getInstance().getReference();
 
-        File localFile = null;
-        try {
-            String extension = "";
-            int i = logo.lastIndexOf('.');
-            if (i > 0) {
-                extension = logo.substring(i+1);
-            }
-            localFile = File.createTempFile(bname, extension);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
         StorageReference photoref = mStorageRef.child(logo);
 
         photoref.getDownloadUrl()
@@ -100,6 +88,7 @@ public class SProfileFragment extends Fragment {
                 // ...
             }
         });
+
 
 
 

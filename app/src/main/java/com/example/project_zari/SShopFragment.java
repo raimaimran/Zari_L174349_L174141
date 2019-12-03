@@ -2,12 +2,15 @@ package com.example.project_zari;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -15,11 +18,24 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SShopFragment extends Fragment {
+    private DatabaseReference mDatabase;
+    private SharedPreferences sharedpreferences;
+    private Context mContext;
+
+//    @Override
+//    public View onCreate(){
+//
+//    }
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_seller_shop,container,false);
@@ -35,42 +51,59 @@ public class SShopFragment extends Fragment {
             }
         });
 
-        List<DemoItem> shopitems=new ArrayList<>();
+        final List<DemoItem> shopitems=new ArrayList<>();
         int id;
         String s;
         Drawable d;
 
-        id = getResources().getIdentifier("shopitem1","drawable","com.example.project_zari");
-        d=getResources().getDrawable(id);
-        DemoItem newitem=new DemoItem("Red Lehnga","Beautiful embroidered lehnga with long kameez and dupatta.",d,5);
-        shopitems.add(newitem);
+        final sellerShopAdapter adapt = new sellerShopAdapter(shopitems,getContext());
+        shopitemslist.setAdapter(adapt);
 
-        id = getResources().getIdentifier("shopitem2","drawable","com.example.project_zari");
-        d=getResources().getDrawable(id);
-        newitem=new DemoItem("Mehndi dress","Yellow garara with green shirt, perfect for Mehndi or Dholki..",d,4);
-        shopitems.add(newitem);
+        this.mContext=getContext();
+        sharedpreferences = mContext.getSharedPreferences("sellersignin", Context.MODE_PRIVATE);
+        final String selleremail = sharedpreferences.getString("email","");
 
-        id = getResources().getIdentifier("shopitem3","drawable","com.example.project_zari");
-        d=getResources().getDrawable(id);
-        newitem=new DemoItem("Cream colored dress","Traditional maxi, cream colored.",d,3);
-        shopitems.add(newitem);
+        mDatabase = FirebaseDatabase.getInstance().getReference("Item");
 
-        id = getResources().getIdentifier("shopitem4","drawable","com.example.project_zari");
-        d=getResources().getDrawable(id);
-        newitem=new DemoItem("White long dress","White dress with golden embroidered dupatta.",d,1);
-        shopitems.add(newitem);
+        // Read from the database
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                for( DataSnapshot uniqueKeySnapShot : dataSnapshot.getChildren()){
 
-        id = getResources().getIdentifier("shopitem5","drawable","com.example.project_zari");
-        d=getResources().getDrawable(id);
-        newitem=new DemoItem("Diamond earrings","Diamond earrings with neat finish..",d,2);
-        shopitems.add(newitem);
+                    String email = uniqueKeySnapShot.child("email").getValue().toString();
 
-        id = getResources().getIdentifier("shopitem6","drawable","com.example.project_zari");
-        d=getResources().getDrawable(id);
-        newitem=new DemoItem("Navy blue dress","Gold embroidered blue lehnga with net dupatta, very elegant",d,5);
-        shopitems.add(newitem);
+                    if(email.equals(selleremail) )
+                    {
+                        String name = uniqueKeySnapShot.child("name").getValue().toString();
+                        String desc = uniqueKeySnapShot.child("desc").getValue().toString();
+                        String price = uniqueKeySnapShot.child("price").getValue().toString();
+                        int p = Integer.parseInt(price);
+                        String sold = uniqueKeySnapShot.child("quantitysold").getValue().toString();
+                        int s = Integer.parseInt(sold);
+                        String rate = uniqueKeySnapShot.child("rating").getValue().toString();
+                        int r = Integer.parseInt(rate);
+                        String img = uniqueKeySnapShot.child("image").toString();
 
-        shopitemslist.setAdapter(new sellerShopAdapter(shopitems,getContext()));
+                        DemoItem newitem = new DemoItem(name,desc,img,r,p,s);
+                        shopitems.add(newitem);
+                    }
+                }
+                adapt.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                //Log.w(TAG, "Failed to read value.", error.toException());
+                return;
+            }
+        });
+
+
+        adapt.notifyDataSetChanged();
         return view;
     }
 
